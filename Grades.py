@@ -9,35 +9,30 @@ Grade = [GradeE, GradeC]
 #        print ()
 
 
-#Function that uses dictionary to transform grade into Ints
-def gtdict(gradesingle):
-    return {
-        "1" : 15,
-        "1-" : 14,
-        "2+" : 13,
-        "2" : 12,
-        "2-" : 11,
-        "3+" : 10,
-        "3" : 9,
-        "3-" : 8,
-        "4+" : 7,
-        "4" : 6,
-        "4-" : 5,
-        "5+" : 4,
-        "5" : 3,
-        "5-" : 2,
-        "6" : 1
-    }.get(gradesingle, 1)
+transdict = {
+    "1" : 15,
+    "1-" : 14,
+    "2+" : 13,
+    "2" : 12,
+    "2-" : 11,
+    "3+" : 10,
+    "3" : 9,
+    "3-" : 8,
+    "4+" : 7,
+    "4" : 6,
+    "4-" : 5,
+    "5+" : 4,
+    "5" : 3,
+    "5-" : 2,
+    "6" : 1
+}
 
 
-#Function That operate the dict funtion
+#Function Transforms grades into number using transdict
 def gt(Grade):
     GE, GC = Grade
-    global gradesingle
-    gradesingle = GE
-    GEt = gtdict(gradesingle)
-    gradesingle = GC
-    GCt = gtdict(gradesingle)
+    GEt = transdict.get(GE, 1)
+    GCt = transdict.get(GC, 1)
     return GEt, GCt
 
 
